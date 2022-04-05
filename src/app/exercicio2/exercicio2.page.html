@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-router-link class="color" href="#">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-router-link>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Exercício 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item color="light">
+      <ion-icon name="car-outline" slot="start" class="azul"></ion-icon>
+      <ion-label class="azul">Lista de Carros - Json</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngFor="let item of listas">
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="7"> <ion-card-subtitle>{{ item.marca }}</ion-card-subtitle> </ion-col>
+        <ion-col size="3" style="text-align: end; font-style: italic;"> <ion-label class="rm"> {{ item.cor }}</ion-label> </ion-col>
+        <ion-col size="2" style="text-align: end;"> <ion-label class="rm"> {{ item.anofabricacao }} </ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="8"> <ion-card-title>{{ item.modelo }}</ion-card-title> </ion-col>
+      </ion-row>
+    </ion-card-header>
+  
+    <ion-card-content style="text-align: center;">
+      <img src="assets/img/{{item.foto}}" alt="foto">
+    </ion-card-content>
+  </ion-card>
+
+  <!--
+  <ion-card>
+      <table>
+        <tr class="titTabela"> 
+          <td> Marca </td> 
+          <td> Modelo </td> 
+          <td> Cor </td> 
+          <td> Ano </td> 
+        </tr>
+        <tr class="dadosTabela">
+          <td>
+            <p *ngFor="let item of listas"> {{ item.marca }} </p> 
+          </td>
+          <td>
+            <p *ngFor="let item of listas"> {{ item.modelo }} </p> 
+          </td>
+          <td>
+            <p *ngFor="let item of listas"> {{ item.cor }} </p> 
+          </td>
+          <td>
+            <p *ngFor="let item of listas"> {{ item.anofabricacao }} </p> 
+          </td>
+        </tr>
+      </table>
+  </ion-card>
+  -->
+</ion-content>
